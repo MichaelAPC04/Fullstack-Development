@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Forecasts</title>
+</head>
+<body>
+    <table>
+        <h1>readingsTotal</h1>
+        <tr>
+            <th>Name</th>
+            <th>Date</th>
+            <th>Readings</th>
+        </tr>
+        <% for(let i=0;i<forecasts.length;i++){ %>
+        <tr>
+            <td><%= forecasts[i].name %></td>
+            <td><%= forecasts[i].date %></td>
+            <td><%= forecasts[i].readings %></td>
+        </tr>
+        <%} %>
+    </table>
+</body>
+</html>

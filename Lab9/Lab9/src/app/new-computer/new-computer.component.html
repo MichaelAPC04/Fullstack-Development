@@ -1,0 +1,13 @@
+<h1>Add a New Computer</h1>
+<form>
+    <label for="cpu" class="form-label">CPU:</label>
+    <input type="text" id="computerName" class="form-control" name="computerName" [(ngModel)] = computer.cpu required>
+    <br>
+    <label for="ram" class="form-label">RAM:</label>
+    <input type="number" id="computerType" class="form-control" name="computerType" [(ngModel)] = computer.ram required>
+    <br>
+    <label for="hdd" class="form-label">HDD:</label>
+    <input type="number" id="computerPrice" class="form-control" name="computerPrice" [(ngModel)] = computer.hdd required>
+    <br>
+    <button class="btn btn=primary" (click) = addComputer()>Add Computer</button>
+</form>
