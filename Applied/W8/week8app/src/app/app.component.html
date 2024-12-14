@@ -1,0 +1,39 @@
+<h1>{{title}}</h1>
+
+<h2>My Unit code is: {{getUnitCode()}}</h2>
+
+<h3>Counter equals: {{counter}}</h3>
+
+<button (click)="incrementCounter()">Increment</button>
+
+<br>
+<h3>We have {{fleet.length}} cars</h3>
+<br>
+
+Car Maker: <input [(ngMaker)]="inputMaker" type="text"/> <br>
+Car Model: <input [(ngModel)]="inputModel" type="text"/> <br><br>
+
+<button [disabled]="fleet.length==3" (click)="addCarToFleet()">Add New Car</button>
+<button [disabled]="fleet.length==0" (click)="removeLastCar()">Remove Car</button>
+
+@if(fleet.length>0){
+
+<table>
+  <tr>
+    <td>ID</td>
+    <td>Maker</td>
+    <td>Model</td>
+  </tr>
+  @for(car of fleet; track $index; let i = $index ){
+    <tr>
+      <td>{{i+1}}</td>
+      <td>{{car.maker}}</td>
+      <td>{{car.model}}</td>
+    </tr>
+  }
+</table>
+}
+
+@else{
+  <h3>Our fleet is empty</h3>
+}

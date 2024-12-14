@@ -1,0 +1,30 @@
+<html>
+    <body>
+
+        <img src = "/images/1.jpg" alt = "image" />
+
+        <audio controls>
+            <source src = "/audio/1.mp3" type = "audio/mpeg" />
+
+        <h3> <%= db.length%> </h3>
+        <form method="post" action="/students/new">
+            Full Name: <input type = "text" name = "fullName" id = "fullName" /> </br>
+            Age: <input type = "number" name = "age" id = "age" /> </br>
+            <button type = "submit"> Add New Student </button>
+
+            <table>
+                <tr>
+                    <td>Name</td>
+                    <td>Age</td>
+                    <% for(var i = 0; i < db.length; i++){ %>
+                        <tr>
+                            <td><%=db[i].name %></td>
+                            <td><%=db[i].age%></td>
+                        </tr>
+                   <% } %>
+                </tr>
+            </table>
+
+        </form>
+    </body>
+</html>
