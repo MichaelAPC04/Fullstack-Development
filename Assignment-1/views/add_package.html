@@ -1,0 +1,115 @@
+<!DOCTYPE html>
+<html lang="en" data-bs-theme="auto">
+
+  <head>
+    <title>Add Package</title>
+    <link href="/bootstrap.min.css" rel="stylesheet"/>
+    <style>
+        html, body {
+          height: 100%;
+          margin: 0;
+          display: flex;
+          flex-direction: column;
+        }
+        
+        footer {
+          background-color: whitesmoke;
+          text-align: center;
+          margin-top: auto;
+        }
+      </style>
+  </head>
+  
+  <body>
+    <nav class="navbar navbar-expand-lg navbar-light bg-light">
+        <div class="collapse navbar-collapse" id="navbarNav">
+          <ul class="navbar-nav">
+            <li class="nav-item active">
+              <a class="nav-link" href="/0001/apc/"> Home</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" href="/0001/apc/addDriver/">Add Drivers</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" href="/0001/apc/getDrivers/">Get Drivers</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" href="/0001/apc/removeDriver/">Remove Drivers</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" href="/0001/apc/addPackage/">Add Packages</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" href="/0001/apc/getPackages/">Get Packages</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" href="/0001/apc/removePackage/">Remove Packages</a>
+            </li>
+          </ul>
+        </div>
+      </nav>
+    <main>
+      <div class="album py-5">
+        <div class="container">
+          <h3 class="my-2"> Add Package </h3>
+          <div class="row row-cols-1 row-cols-sm-2 g-3">
+            <div class="col">
+              <div class="card shadow-sm">
+                <div class="card-body">
+                  <form method="POST" action="/0001/apc/addPackagePost">
+                    
+                    <div class="mb-3">
+                      <label for="pTitle" class="form-label">Title:</label>
+                      <input type="text" id="pTitle" class="form-control" placeholder="Enter the package title" name="pTitle" required>
+                    </div>
+                    
+                    <div class="mb-3">
+                      <label for="pWeight" class="form-label">Weight:</label>
+                      <input type="number" id="pWeight" class="form-control" placeholder="Please enter the package weight" name="pWeight" required>
+                    </div>
+
+                    <div class="mb-3">
+                      <label for="pDest" class="form-label">Destination:</label>
+                      <input type="text" id="pDest" class="form-control" placeholder="Please enter the destination" name="pDest" required>
+                    </div>
+
+                    <div class="mb-3">
+                        <label for="pDesc" class="form-label">Description:</label>
+                        <input type="text" id="pDesc" class="form-control" placeholder="Please enter the description" name="pDesc">
+                      </div>
+
+                    <div class="mb-3">
+                      <label for="pIsAllocated" class="form-label">Is Allocated:</label>
+                      <input type="boolean" id="pIsAllocated" class="form-control" placeholder="Please enter if the package is allocated" name="pIsAllocated" required>
+                    </div>
+
+                    <div class="mb-3">
+                        <label for="pDriverID" class="form-label">Driver ID:</label>
+                        <select id="pDriverID" class="form-control" name="pDriverID" required>
+                            <option value="" disabled selected>Select a Driver ID</option>
+                            <% for (let i = 0; i < db.length; i++) { %>
+                                <option value="<%= db[i].dId %>"><%= db[i].dId %></option>
+                            <% } %>
+                        </select>
+                    </div>
+                    
+                    <button class="btn btn-primary">Add Package</button>
+                  </form>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </main>
+  </body>
+
+  <footer class="bg-body-tertiary text-center text-lg-start">
+    <div class="text-center p-3" style="background-color: whitesmoke;">
+      Name: apc  <br>
+      ID: 0001 <br>
+      Email: monashdrivers@student.edu.auto
+    </div>
+  </footer>
+
+</html>
