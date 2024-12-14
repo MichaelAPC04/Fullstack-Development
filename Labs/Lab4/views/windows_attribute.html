@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang = "en">
+    <head>
+        <title>
+            Windows Attributes
+        </title>
+    </head>
+    <body>
+        
+        <table>
+            <tr>
+                <td>ID</td>
+                <td>Name</td>
+                <td>CPU</td>
+                <td>RAM</td>
+                <td>Storage</td>
+                <td>Is Windows</td>
+            </tr>
+                <% for(var i = 0; i < count.length; i++){ %>
+                    <% if(count[i].cWindows == ("true")) { %>
+                        <tr>
+                            <td><%= count[i]._id %></td>
+                            <td><%= count[i].name %></td>
+                            <td><%= count[i].cCpu %></td>
+                            <td><%= count[i].cRam %></td>
+                            <td><%= count[i].cStorage %></td>
+                            <td><%= count[i].cWindows %></td>
+                        </tr>
+                    <% } %>
+                <% } %>
+        </table>
+
+        <h3><% if(count.length == 0){
+            return "No computers in the database";
+        } %></h3>
+
+    </body>
+</html>
