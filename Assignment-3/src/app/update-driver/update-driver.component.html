@@ -1,0 +1,29 @@
+<main>
+    <div class="album py-5">
+        <div class="container">
+            <h3 class="my-2"> Update Driver License and Department </h3>
+            <div class="row row-cols-1 row-cols-sm-2 g-3">
+                <div class="col">
+                    <div class="card shadow-sm">
+                        <div class="card-body">
+                            <form>
+                                <div class="mb-3">
+                                    <label for="dId" class="form-label">MongoDB ID:</label>
+                                    <input type="text" id="dId" class="form-control" placeholder="Enter driver MongoDB ID"
+                                        name="dId" [(ngModel)]="driver.dId" required>
+                                    <label for="dLicense" class="form-label">New License:</label>
+                                    <input type="text" id="dLicense" class="form-control" placeholder="Enter new driver license"
+                                        name="dLicense" [(ngModel)]="driver.dLicense" required>
+                                    <label for="dDepartment" class="form-label">New Department:</label>
+                                    <input type="text" id="dDepartment" class="form-control"
+                                        placeholder="Enter new driver department" name="dDepartment" [(ngModel)]="driver.dDepartment" required>
+                                </div>
+                                <button class="btn btn-primary" (click)="updateDriverBydId(driver.dId, driver.dLicense, driver.dDepartment)">Update Driver</button>
+                            </form>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</main>

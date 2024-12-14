@@ -1,0 +1,23 @@
+<main>
+    <div class="album py-5">
+        <div class="container">
+            <h3 class="my-2"> Delete Driver by MongoDB ID </h3>
+            <div class="row row-cols-1 row-cols-sm-2 g-3">
+                <div class="col">
+                    <div class="card shadow-sm">
+                        <div class="card-body">
+                            <form>
+                                <div class="mb-3">
+                                    <label for="dId" class="form-label">ID:</label>
+                                    <input type="text" id="dId" class="form-control" placeholder="Enter driver MongoDB ID"
+                                        name="dId" [(ngModel)]="driver.dId" required>
+                                </div>
+                                <button class="btn btn-danger" (click)="deleteDriverBydId(driver.dId)">Delete Driver</button>
+                            </form>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</main>
